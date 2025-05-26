@@ -75,7 +75,7 @@ def executar_acao(resposta_ia):
                     pyautogui.hotkey(*step["keys"])
                 else:
                     print("Ação não reconhecida no script:", step)
-            print("[Sistema]: Script de automação executado.")
+            print("[IA]:", resposta_ia)
         # Se for um comando simples
         else:
             acao = comando.get("action")
@@ -107,7 +107,6 @@ def main():
             if system_instruction:
                 prompt += system_instruction + "\n\n"
             prompt += pergunta
-            print("\n[Sistema][DEBUG] Prompt enviado ao modelo:\n" + prompt + "\n")
             # Monta a mensagem para o chat completions
             messages = [
                 {"role": "user", "content": [
